@@ -1,15 +1,13 @@
 /* style.css */
-
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  background: linear-gradient(135deg, #1f1c2c, #928dab) !important;
   font-family: sans-serif;
   overflow: hidden;
   position: relative;
 }
 
-/* Mouse light effect */
 body::before {
   content: '';
   position: absolute;
@@ -23,13 +21,4 @@ body::before {
   transition: top 0.05s, left 0.05s;
   border-radius: 50%;
   z-index: 1;
-}
-
-/* Optional: Website content */
-main {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  padding-top: 150px;
 }
