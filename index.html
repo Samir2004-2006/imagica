@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VideoCraft Pro | SA M IR Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .transition-theme {
+      transition: all 0.5s ease-in-out;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .skill-bar {
+      position: relative;
+      width: 100%;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: #22c55e;
+      width: 0%;
+      transition: width 2s ease;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans transition-theme" id="page-body">
+
+  <!-- Navbar -->
+  <header class="px-6 md:px-20 py-6 flex items-center justify-between">
+    <div class="text-lg font-bold">● Imagica</div>
+    <nav class="hidden md:flex gap-6 text-sm text-gray-300">
+      <a href="#" class="hover:text-white">Home</a>
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#resume" class="hover:text-white">Resume</a>
+      <a href="#portfolio" class="hover:text-white">Portfolio</a>
+    </nav>
+    <div class="flex gap-4 items-center">
+      <button onclick="toggleTheme()" class="bg-gray-800 text-white px-4 py-1 rounded-full text-sm">🌗</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-[80vh] flex items-center justify-center text-center px-6 relative fade-in" id="hero">
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70"></div>
+    <div class="relative z-10 max-w-2xl">
+      <p class="uppercase text-sm text-gray-400 tracking-widest mb-2">Learn Motion | FX | Edit</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Create at the <span class="text-gray-400">Speed of Thought</span></h1>
+      <p class="text-md md:text-lg text-gray-400 mb-6">I’m SA M IR — mastering After Effects, Houdini simulations, and cinematic video editing to craft compelling visuals.</p>
+      <button class="border border-gray-500 px-6 py-2 rounded-full text-white hover:bg-white hover:text-black transition mb-4">Get Early Access</button>
+      <p onclick="openVideo()" class="text-sm text-gray-500 underline hover:text-white cursor-pointer">▶ Play Video Demo</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 md:px-20 fade-in">
+    <h2 class="text-4xl font-bold text-center mb-8">About Me</h2>
+    <div class="text-center max-w-3xl mx-auto text-gray-400">
+      <p class="mb-4">I'm a creative video artist with a passion for storytelling, motion design, and visual effects. I specialize in After Effects motion graphics, high-quality video editing, and I'm currently learning FX in Houdini to add simulations and dynamics to my work.</p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-20 px-6 md:px-20 fade-in">
+    <h2 class="text-4xl font-bold text-center mb-12">Skills & Tools</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-sm text-gray-400">
+      <div>
+        <h3 class="text-white font-semibold mb-4">Software Skills</h3>
+        <p>After Effects</p>
+        <div class="skill-bar mb-2"><div class="skill-fill" data-fill="90%"></div></div>
+        <p>Houdini</p>
+        <div class="skill-bar mb-2"><div class="skill-fill" data-fill="60%"></div></div>
+        <p>Premiere Pro</p>
+        <div class="skill-bar mb-2"><div class="skill-fill" data-fill="85%"></div></div>
+        <p>Photoshop</p>
+        <div class="skill-bar mb-2"><div class="skill-fill" data-fill="75%"></div></div>
+        <p>Silhouette</p>
+        <div class="skill-bar mb-2"><div class="skill-fill" data-fill="65%"></div></div>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-2">Languages</h3>
+        <ul class="space-y-2">
+          <li>● English</li>
+          <li>● Hindi</li>
+        </ul>
+        <h3 class="text-white font-semibold mt-6 mb-2">Personal Skills</h3>
+        <ul class="space-y-2">
+          <li>● Creativity</li>
+          <li>● Discipline</li>
+          <li>● Storytelling</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-2">What Can I Do?</h3>
+        <ul class="space-y-2">
+          <li>● Motion Design</li>
+          <li>● FX Simulations</li>
+          <li>● Cinematic Editing</li>
+          <li>● Promo Videos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 px-6 md:px-20 fade-in">
+    <h2 class="text-4xl font-bold text-center mb-12">My Creative Tools</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-6 rounded-xl">
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">After Effects Motion Graphics</h3>
+        <p class="text-sm text-gray-400">Eye-catching titles, transitions, and animation using AE's full potential.</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Houdini FX Learning</h3>
+        <p class="text-sm text-gray-400">Currently learning FX like FLIP rivers, explosions, and procedural systems.</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <img src="https://via.placeholder.com/300x200" class="rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Video Editing</h3>
+        <p class="text-sm text-gray-400">Cutting and assembling story-driven content with precision and rhythm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="relative w-full max-w-3xl mx-auto">
+      <video controls class="w-full rounded-xl">
+        <source src="your-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <button onclick="closeVideo()" class="absolute top-2 right-2 text-white text-xl">✖</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-6 text-gray-500 border-t border-gray-800">
+    &copy; 2025 VideoCraft Pro | Built by SA M IR
+  </footer>
+
+  <script>
+    function openVideo() {
+      document.getElementById('videoModal').classList.remove('hidden');
+      document.getElementById('videoModal').classList.add('flex');
+    }
+    function closeVideo() {
+      document.getElementById('videoModal').classList.remove('flex');
+      document.getElementById('videoModal').classList.add('hidden');
+    }
+    function toggleTheme() {
+      const body = document.getElementById('page-body');
+      const isDark = body.classList.contains('bg-black');
+      body.classList.toggle('bg-white', isDark);
+      body.classList.toggle('text-black', isDark);
+      body.classList.toggle('bg-black', !isDark);
+      body.classList.toggle('text-white', !isDark);
+    }
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.querySelectorAll('.skill-fill').length) {
+            entry.target.querySelectorAll('.skill-fill').forEach(el => {
+              el.style.width = el.dataset.fill;
+            });
+          }
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
