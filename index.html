@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VideoCraft Pro | SA M IR Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Custom CSS file for gradient + spotlight -->
+  <link rel="stylesheet" href="style.css" />
+
   <style>
     .glass {
       background: rgba(255, 255, 255, 0.05);
@@ -155,15 +161,15 @@
     &copy; 2025 VideoCraft Pro | Built by SA M IR
   </footer>
 
+  <!-- All JavaScript -->
   <script>
-    function openVideo() {
-      document.getElementById('videoModal').classList.remove('hidden');
-      document.getElementById('videoModal').classList.add('flex');
-    }
-    function closeVideo() {
-      document.getElementById('videoModal').classList.remove('flex');
-      document.getElementById('videoModal').classList.add('hidden');
-    }
+    // Light follow
+    document.addEventListener('mousemove', (e) => {
+      document.body.style.setProperty('--x', e.clientX + 'px');
+      document.body.style.setProperty('--y', e.clientY + 'px');
+    });
+
+    // Toggle theme
     function toggleTheme() {
       const body = document.getElementById('page-body');
       const isDark = body.classList.contains('bg-black');
@@ -172,6 +178,7 @@
       body.classList.toggle('bg-black', !isDark);
       body.classList.toggle('text-white', !isDark);
     }
+
     // Scroll animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -187,14 +194,17 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    function openVideo() {
+      document.getElementById('videoModal').classList.remove('hidden');
+      document.getElementById('videoModal').classList.add('flex');
+    }
+
+    function closeVideo() {
+      document.getElementById('videoModal').classList.remove('flex');
+      document.getElementById('videoModal').classList.add('hidden');
+    }
   </script>
 
 </body>
 </html>
-<script>
-  document.addEventListener('mousemove', (e) => {
-    document.body.style.setProperty('--x', e.clientX + 'px');
-    document.body.style.setProperty('--y', e.clientY + 'px');
-  });
-</script>
-<link rel="stylesheet" href="style.css" />
