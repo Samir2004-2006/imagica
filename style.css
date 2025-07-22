@@ -1,24 +1,76 @@
 /* style.css */
+
+/* Body Gradient & Mouse Light */
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #1f1c2c, #928dab) !important;
-  font-family: sans-serif;
-  overflow: hidden;
+  background: linear-gradient(135deg, #2b001f, #ff4d6d); /* deep magenta to soft red */
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: auto;
   position: relative;
+  color: white;
 }
 
+/* Mouse light effect */
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: var(--y, 50%);
   left: var(--x, 50%);
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+  background: radial-gradient(circle, rgba(255, 77, 109, 0.15), transparent 60%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: top 0.05s, left 0.05s;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
+}
+
+/* Keep content above light */
+main, header, section, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skill bars */
+.skill-bar {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #333;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: #ff4d6d;
+  width: 0%;
+  transition: width 2s ease;
+}
+
+/* Card Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Theme Transition */
+.transition-theme {
+  transition: all 0.5s ease-in-out;
 }
